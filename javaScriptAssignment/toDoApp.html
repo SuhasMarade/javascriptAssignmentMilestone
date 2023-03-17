@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+</head>
+<body>
+    <h1>To Do APP</h1>
+    <ul id="list"></ul>
+    <input type="text" id="task">
+    <button id="btn">Add task</button>
+    <button id="rbtn">remove task</button>
+    <script>
+        function addTask(){
+            let x = document.getElementById("list");
+            let task = document.getElementById("task");
+            let li = document.createElement("li");
+            li.setAttribute("id",task.value);
+            li.appendChild(document.createTextNode(task.value));
+            x.appendChild(li);
+        }
+        function removeTask(){
+            let x = document.getElementById("list");
+            let task = document.getElementById("task");
+            let item = document.getElementById(task.value);
+            x.removeChild(item);
+        }
+        let btn = document.getElementById("btn");
+        let rbtn = document.getElementById("rbtn");
+        btn.addEventListener("click",addTask);
+        rbtn.addEventListener("click",removeTask);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>highlight word</title>
+    <style>
+        .highlight{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">
+       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia quaerat autem architecto similique ad ut aut, optio rem fugiat nobis quia assumenda quasi ex qui iure nam iusto voluptates et?
+       Maxime magnam vel libero amet. Asperiores, dolor quibusdam deleniti repellat assumenda aperiam, quo sunt animi at commodi quis consectetur eaque accusamus tempora fuga suscipit natus doloribus nulla voluptas. Nemo, numquam.
+       Quod adipisci velit accusantium molestias, animi aspernatur nobis! Nesciunt in optio placeat ut vitae, sed recusandae maxime minima cumque tempora quis enim eum tenetur provident iste necessitatibus, beatae hic ad!
+       Blanditiis est voluptatibus ex? Eum, non? Fugit facere ducimus ea soluta veritatis? Voluptas quod optio soluta non ullam, nisi voluptatem minima et, tempora, culpa quo reiciendis minus perspiciatis error molestias!
+       Enim voluptas nesciunt est molestiae exercitationem incidunt voluptatum sunt, aperiam sapiente, culpa error minus quo sequi nulla perferendis. Expedita quibusdam facilis possimus similique consequuntur tenetur repellendus non nobis enim illo?
+    </p>
+    <script>
+       let pElement = document.getElementById("text");
+       let str = pElement.innerText;
+       let arr = str.split(" ");
+       let result = arr.filter((ele) => {
+        if(ele.length >= 8){
+            return ele;
+        }
+       });
+      function highlight(result) {
+       var inputText = document.getElementById("text");
+       var innerHTML = text.innerHTML;
+
+       result.forEach(ele => {
+        var index = innerHTML.indexOf(ele);
+        if (index >= 0) { 
+        innerHTML = innerHTML.substring(0,index) + "<span class='highlight'>" + innerHTML.substring(index,index+ele.length) + "</span>" + innerHTML.substring(index + ele.length);
+        inputText.innerHTML = innerHTML;
+         }
+       });
+
+      }
+      window.onload = function(){
+        highlight(result);
+      }
+    </script>
+</body>
+</html>

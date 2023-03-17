@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changer</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{                        
+            background-color: #808080;
+            border-radius: 20px;
+            color: #000000;
+            font-size: 40px;
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <script>
+        let btn = document.getElementById("btn");        
+        function colorChanger(){
+            let colors = ["red", "green", "blue", "orange", "yellow", "violet", "grey", "pink", "brown"]
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+        btn.addEventListener("click", colorChanger);
+    </script>
+</body>
+</html>
