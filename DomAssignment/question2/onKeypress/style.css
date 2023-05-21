@@ -1,0 +1,10 @@
+#display{
+    color: blueviolet;
+}
+
+#indexBox{
+    font-size: 25px;
+}
+input::placeholder{
+    text-align: center;
+}
